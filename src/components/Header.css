@@ -1,0 +1,144 @@
+.header {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 255, 136, 0.2);
+  padding: 20px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.profile-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #00ff88;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+}
+
+.profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.username {
+  font-size: 16px;
+  font-weight: 600;
+  color: #00ff88;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+.rank {
+  font-size: 14px;
+  color: #cccccc;
+  font-weight: 400;
+}
+
+.utility-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.icon-container {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: rgba(0, 255, 136, 0.1);
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.icon-container:hover {
+  background: rgba(0, 255, 136, 0.2);
+  border-color: #00ff88;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+  transform: translateY(-2px);
+}
+
+.utility-icon {
+  width: 20px;
+  height: 20px;
+  color: #00ff88;
+  filter: drop-shadow(0 0 5px rgba(0, 255, 136, 0.5));
+}
+
+.header-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #00ff88, transparent);
+  margin-top: 15px;
+  opacity: 0.3;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .header {
+    padding: 15px 20px;
+  }
+  
+  .user-profile {
+    gap: 10px;
+  }
+  
+  .profile-picture {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .username {
+    font-size: 14px;
+  }
+  
+  .rank {
+    font-size: 12px;
+  }
+  
+  .utility-icons {
+    gap: 10px;
+  }
+  
+  .icon-container {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .utility-icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 10px 15px;
+  }
+  
+  .user-info {
+    display: none;
+  }
+}
