@@ -22,74 +22,68 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 30px 20px;
-  background: rgba(0, 255, 136, 0.05);
-  border: 2px solid rgba(0, 255, 136, 0.2);
-  border-radius: 20px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
-  backdrop-filter: blur(10px);
 }
 
 .game-mode:hover {
-  background: rgba(0, 255, 136, 0.1);
-  border-color: #00ff88;
-  box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
+  background: transparent;
+  box-shadow: none;
   transform: translateY(-5px);
 }
 
 .game-mode.main-mode {
   grid-column: 1 / -1;
   grid-row: 2;
-  background: rgba(0, 255, 136, 0.1);
-  border: 3px solid #00ff88;
-  box-shadow: 0 0 40px rgba(0, 255, 136, 0.4);
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 .game-mode.main-mode:hover {
-  background: rgba(0, 255, 136, 0.15);
-  box-shadow: 0 0 50px rgba(0, 255, 136, 0.5);
+  background: transparent;
+  box-shadow: none;
   transform: translateY(-8px);
 }
 
 .mode-icon-container {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .chess-icon {
-  width: 40px;
-  height: 40px;
+  max-width: 40px;
+  max-height: 40px;
   color: #00ff88;
-  filter: drop-shadow(0 0 10px rgba(0, 255, 136, 0.5));
   transition: all 0.3s ease;
 }
 
 .vs-icon {
-  width: 50px;
-  height: 50px;
+  max-width: 50px;
+  max-height: 50px;
 }
 
 .game-mode:hover .chess-icon {
-  filter: drop-shadow(0 0 15px rgba(0, 255, 136, 0.8));
   transform: scale(1.1);
 }
 
 .mode-label {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   color: #ffffff;
   text-align: center;
-  text-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
   transition: all 0.3s ease;
 }
 
 .game-mode:hover .mode-label {
   color: #00ff88;
-  text-shadow: 0 0 15px rgba(0, 255, 136, 0.6);
 }
 
 /* Position specific styles */
@@ -113,8 +107,39 @@
   grid-row: 3;
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
+/* Mobile Landscape Orientation */
+@media (orientation: landscape) and (max-height: 600px) {
+  .main-content {
+    padding: 10px 15px;
+    min-height: calc(100vh - 70px);
+  }
+  
+  .game-modes-grid {
+    gap: 10px;
+    max-width: 500px;
+  }
+  
+  .chess-icon {
+    max-width: 25px;
+    max-height: 25px;
+  }
+  
+  .vs-icon {
+    max-width: 35px;
+    max-height: 35px;
+  }
+  
+  .mode-label {
+    font-size: 11px;
+  }
+  
+  .mode-icon-container {
+    margin-bottom: 5px;
+  }
+}
+
+/* Mobile Portrait */
+@media (max-width: 768px) and (orientation: portrait) {
   .main-content {
     padding: 20px 15px;
   }
@@ -125,17 +150,17 @@
   }
   
   .game-mode {
-    padding: 20px 15px;
+    padding: 0;
   }
   
   .chess-icon {
-    width: 35px;
-    height: 35px;
+    max-width: 35px;
+    max-height: 35px;
   }
   
   .vs-icon {
-    width: 45px;
-    height: 45px;
+    max-width: 45px;
+    max-height: 45px;
   }
   
   .mode-label {
@@ -143,7 +168,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 480px) and (orientation: portrait) {
   .main-content {
     padding: 15px 10px;
   }
@@ -154,18 +179,17 @@
   }
   
   .game-mode {
-    padding: 15px 10px;
-    border-radius: 15px;
+    padding: 0;
   }
   
   .chess-icon {
-    width: 30px;
-    height: 30px;
+    max-width: 30px;
+    max-height: 30px;
   }
   
   .vs-icon {
-    width: 40px;
-    height: 40px;
+    max-width: 40px;
+    max-height: 40px;
   }
   
   .mode-label {
@@ -181,16 +205,16 @@
   }
   
   .game-mode {
-    padding: 25px 20px;
+    padding: 0;
   }
   
   .chess-icon {
-    width: 45px;
-    height: 45px;
+    max-width: 45px;
+    max-height: 45px;
   }
   
   .vs-icon {
-    width: 55px;
-    height: 55px;
+    max-width: 55px;
+    max-height: 55px;
   }
 }

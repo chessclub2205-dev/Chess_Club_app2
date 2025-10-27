@@ -10,14 +10,26 @@
   position: relative;
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
+/* Mobile Landscape Orientation */
+@media (orientation: landscape) and (max-height: 600px) {
+  .main-layout {
+    flex-direction: row;
+    min-height: calc(100vh - 60px);
+  }
+  
+  .home-page {
+    min-height: 100vh;
+  }
+}
+
+/* Mobile Portrait */
+@media (max-width: 768px) and (orientation: portrait) {
   .main-layout {
     flex-direction: column;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 480px) and (orientation: portrait) {
   .main-layout {
     padding: 0 10px;
   }

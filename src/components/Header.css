@@ -95,8 +95,42 @@
   opacity: 0.3;
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
+/* Mobile Landscape Orientation */
+@media (orientation: landscape) and (max-height: 600px) {
+  .header {
+    padding: 8px 15px;
+  }
+  
+  .profile-picture {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .username {
+    font-size: 11px;
+  }
+  
+  .rank {
+    font-size: 9px;
+  }
+  
+  .utility-icons {
+    gap: 6px;
+  }
+  
+  .icon-container {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .utility-icon {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* Mobile Portrait */
+@media (max-width: 768px) and (orientation: portrait) {
   .header {
     padding: 15px 20px;
   }
@@ -133,7 +167,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 480px) and (orientation: portrait) {
   .header {
     padding: 10px 15px;
   }
