@@ -1,28 +1,28 @@
+/* Styles for the top-level home page container */
 .home-page {
-  min-height: 100vh;
+  height: 100vh;
   background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
   color: #ffffff;
+  display: grid;
+  grid-template-rows: var(--header-height) 1fr;
 }
 
+/* Flex layout for main content and sidebar */
 .main-layout {
   display: flex;
-  min-height: calc(100vh - 80px);
+  height: calc(100vh - var(--header-height));
   position: relative;
 }
 
-/* Mobile Landscape Orientation */
+/* Responsive: Mobile landscape adjustments */
 @media (orientation: landscape) and (max-height: 600px) {
   .main-layout {
     flex-direction: row;
-    min-height: calc(100vh - 60px);
-  }
-  
-  .home-page {
-    min-height: 100vh;
+    height: calc(100vh - var(--header-height));
   }
 }
 
-/* Mobile Portrait */
+/* Responsive: Mobile portrait adjustments */
 @media (max-width: 768px) and (orientation: portrait) {
   .main-layout {
     flex-direction: column;

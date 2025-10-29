@@ -33,6 +33,43 @@ A modern chess gaming platform with monetization features and customizable game 
 
 4. Open your browser and navigate to `http://localhost:3000`
 
+## Building for Production
+
+To create a production build:
+
+```bash
+npm run build
+```
+
+This will create a `dist` folder with optimized production files.
+
+Preview the production build locally:
+```bash
+npm run preview
+```
+
+## Deployment
+
+### Option 1: Vercel (Recommended)
+1. Install Vercel CLI: `npm i -g vercel`
+2. Run `vercel` in the project directory
+3. Follow the prompts to deploy
+
+### Option 2: Netlify
+1. Install Netlify CLI: `npm i -g netlify-cli`
+2. Run `netlify deploy --prod`
+3. Follow the prompts
+
+### Option 3: GitHub Pages
+1. Update `vite.config.js` base path: `base: '/chess-club-app/'`
+2. Run `npm run build`
+3. Push the `dist` folder to GitHub Pages
+
+### Option 4: Firebase Hosting
+1. Install Firebase CLI: `npm i -g firebase-tools`
+2. Run `firebase init hosting`
+3. Run `firebase deploy`
+
 ## Project Structure
 
 ```

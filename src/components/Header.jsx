@@ -1,3 +1,4 @@
+// App header showing user profile and utility icons
 import React from 'react'
 import './Header.css'
 
@@ -5,6 +6,7 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header-content">
+        {/* Left: user avatar and basic info */}
         <div className="user-profile">
           <div className="profile-picture">
             <img 
@@ -18,6 +20,7 @@ const Header = () => {
           </div>
         </div>
         
+        {/* Right: placeholder utility icons */}
         <div className="utility-icons">
           <div className="icon-container">
             <div className="utility-icon">⚙</div>

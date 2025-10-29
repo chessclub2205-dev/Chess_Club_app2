@@ -1,22 +1,26 @@
+/* Container for the central grid of game modes */
 .main-content {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px 20px;
-  min-height: calc(100vh - 80px);
+  padding: clamp(10px, 3vh, 40px) clamp(8px, 2vw, 20px);
+  height: 100%;
+  box-sizing: border-box;
 }
 
+/* 2x3 grid; center row reserved for main action */
 .game-modes-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 30px;
-  max-width: 600px;
+  grid-template-rows: 1fr auto 1fr;
+  gap: clamp(10px, 3vmin, 30px);
+  max-width: min(80vw, 700px);
   width: 100%;
   position: relative;
 }
 
+/* Tile base styles (button-like, but transparent) */
 .game-mode {
   display: flex;
   flex-direction: column;
@@ -31,12 +35,14 @@
   position: relative;
 }
 
+/* Lift effect on hover */
 .game-mode:hover {
   background: transparent;
   box-shadow: none;
   transform: translateY(-5px);
 }
 
+/* Center tile spans full width of the grid */
 .game-mode.main-mode {
   grid-column: 1 / -1;
   grid-row: 2;
@@ -45,12 +51,14 @@
   box-shadow: none;
 }
 
+/* Stronger lift on the main tile */
 .game-mode.main-mode:hover {
   background: transparent;
   box-shadow: none;
   transform: translateY(-8px);
 }
 
+/* Holds the SVG icon for each tile */
 .mode-icon-container {
   margin-bottom: 10px;
   display: flex;
@@ -58,22 +66,26 @@
   justify-content: center;
 }
 
+/* Default icon sizing and color (desktop-first) */
 .chess-icon {
-  max-width: 40px;
-  max-height: 40px;
+  width: clamp(28px, 8vmin, 72px);
+  height: auto;
   color: #00ff88;
   transition: all 0.3s ease;
 }
 
+/* Slightly larger icon for VS */
 .vs-icon {
-  max-width: 50px;
-  max-height: 50px;
+  width: clamp(36px, 12vmin, 108px);
+  height: auto;
 }
 
+/* Scale icon when hovering the tile */
 .game-mode:hover .chess-icon {
   transform: scale(1.1);
 }
 
+/* Label text below each icon */
 .mode-label {
   font-size: 14px;
   font-weight: 600;
@@ -82,11 +94,12 @@
   transition: all 0.3s ease;
 }
 
+/* Accent the label on hover */
 .game-mode:hover .mode-label {
   color: #00ff88;
 }
 
-/* Position specific styles */
+/* Position-specific placement using grid lines */
 .game-mode.top-left {
   grid-column: 1;
   grid-row: 1;
@@ -107,7 +120,7 @@
   grid-row: 3;
 }
 
-/* Mobile Landscape Orientation */
+/* Responsive: Mobile landscape adjustments */
 @media (orientation: landscape) and (max-height: 600px) {
   .main-content {
     padding: 10px 15px;
@@ -120,13 +133,13 @@
   }
   
   .chess-icon {
-    max-width: 25px;
-    max-height: 25px;
+    width: 40px;
+    height: auto;
   }
   
   .vs-icon {
-    max-width: 35px;
-    max-height: 35px;
+    width: 56px;
+    height: auto;
   }
   
   .mode-label {
@@ -138,7 +151,7 @@
   }
 }
 
-/* Mobile Portrait */
+/* Responsive: Mobile portrait adjustments */
 @media (max-width: 768px) and (orientation: portrait) {
   .main-content {
     padding: 20px 15px;
@@ -154,13 +167,13 @@
   }
   
   .chess-icon {
-    max-width: 35px;
-    max-height: 35px;
+    width: 48px;
+    height: auto;
   }
   
   .vs-icon {
-    max-width: 45px;
-    max-height: 45px;
+    width: 64px;
+    height: auto;
   }
   
   .mode-label {
@@ -183,13 +196,13 @@
   }
   
   .chess-icon {
-    max-width: 30px;
-    max-height: 30px;
+    width: 40px;
+    height: auto;
   }
   
   .vs-icon {
-    max-width: 40px;
-    max-height: 40px;
+    width: 50px;
+    height: auto;
   }
   
   .mode-label {
@@ -197,7 +210,7 @@
   }
 }
 
-/* Tablet landscape */
+/* Responsive: Tablet landscape adjustments */
 @media (min-width: 769px) and (max-width: 1024px) {
   .game-modes-grid {
     max-width: 700px;
@@ -209,12 +222,12 @@
   }
   
   .chess-icon {
-    max-width: 45px;
-    max-height: 45px;
+    width: 56px;
+    height: auto;
   }
   
   .vs-icon {
-    max-width: 55px;
-    max-height: 55px;
+    width: 80px;
+    height: auto;
   }
 }

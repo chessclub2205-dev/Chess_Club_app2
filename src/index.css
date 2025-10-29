@@ -1,22 +1,32 @@
+/*
+  Global CSS: resets, theming, and shared utilities
+*/
+:root {
+  --header-height: 80px;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Base typography, colors, and layout constraints */
+/* Base typography, colors, and layout constraints */
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   background-color: #1a1a1a;
   color: #ffffff;
   overflow-x: hidden;
+  overflow-y: hidden; /* prevent vertical scroll; layout will scale to fit */
 }
 
+/* Root container sizing to fill viewport height */
 #root {
   width: 100%;
   min-height: 100vh;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar styling for WebKit browsers */
 ::-webkit-scrollbar {
   width: 8px;
 }

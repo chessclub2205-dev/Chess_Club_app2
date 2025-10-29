@@ -1,22 +1,26 @@
+/* Vertical sidebar with neon border and glass effect */
 .sidebar {
-  width: 200px;
+  width: clamp(80px, 16vw, 200px);
   background: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
   border-left: 3px solid #00ff88;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 20px;
+  padding: clamp(10px, 4vh, 40px) clamp(5px, 2vw, 20px);
   position: relative;
+  box-sizing: border-box;
 }
 
+/* Stacked list of sidebar items */
 .sidebar-content {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: clamp(10px, 4vmin, 40px);
   align-items: center;
 }
 
+/* Clickable row container */
 .sidebar-item {
   display: flex;
   flex-direction: column;
@@ -29,11 +33,13 @@
   position: relative;
 }
 
+/* Subtle shift on hover */
 .sidebar-item:hover {
   background: transparent;
   transform: translateX(-5px);
 }
 
+/* Holds the pawn SVG with glow */
 .sidebar-pawn-container {
   position: relative;
   display: flex;
@@ -43,17 +49,20 @@
   filter: drop-shadow(0 6px 3px rgba(0, 0, 0, 1));
 }
 
+/* Size of the pawn icon */
 .sidebar-pawn-container svg {
-  width: 100px;
+  width: clamp(45px, 10vmin, 100px);
   height: auto;
 }
 
+/* Enhance glow and scale on hover */
 .sidebar-item:hover .sidebar-pawn-container {
   filter: drop-shadow(0 6px 3px rgba(0, 0, 0, 1)) drop-shadow(0 0 15px rgba(0, 255, 136, 0.5));
   transform: scale(1.1);
 }
 
 
+/* Red numeric badge positioned on the icon */
 .notification-badge {
   position: absolute;
   top: -5px;
@@ -72,6 +81,7 @@
   box-shadow: 0 0 8px rgba(255, 0, 0, 0.6);
 }
 
+/* Text label for each item */
 .sidebar-label {
   font-size: 12px;
   font-weight: 500;
@@ -80,11 +90,12 @@
   transition: all 0.3s ease;
 }
 
+/* Accent label color on hover */
 .sidebar-item:hover .sidebar-label {
   color: #00ff88;
 }
 
-/* Mobile Landscape Orientation */
+/* Responsive: Mobile landscape adjustments */
 @media (orientation: landscape) and (max-height: 600px) {
   .sidebar {
     width: 100px;
@@ -109,7 +120,7 @@
   }
 }
 
-/* Mobile Portrait */
+/* Responsive: Mobile portrait adjustments */
 @media (orientation: portrait) and (max-width: 768px) {
   .sidebar {
     width: 80px;
@@ -134,7 +145,7 @@
   }
 }
 
-/* Tablet landscape */
+/* Responsive: Tablet landscape adjustments */
 @media (min-width: 769px) and (max-width: 1024px) {
   .sidebar {
     width: 100px;

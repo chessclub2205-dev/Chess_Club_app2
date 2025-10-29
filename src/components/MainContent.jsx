@@ -1,3 +1,4 @@
+// Central grid showing available game modes with SVG icons
 import React from 'react'
 import BattlePassIcon from './icons/BattlePassIcon'
 import TournamentIcon from './icons/TournamentIcon'
@@ -7,6 +8,7 @@ import PracticeIcon from './icons/PracticeIcon'
 import './MainContent.css'
 
 const MainContent = () => {
+  // Configuration for the five game mode tiles
   const gameModes = [
     {
       id: 'battle-pass',
@@ -44,6 +46,7 @@ const MainContent = () => {
   return (
     <div className="main-content">
       <div className="game-modes-grid">
+        {/* Render each game mode tile */}
         {gameModes.map((mode) => (
           <div 
             key={mode.id} 

@@ -1,8 +1,9 @@
+// SVG icon component for the Story mode
 import React from 'react'
 
 const StoryIcon = ({ className = "", size = 40 }) => {
   return (
-    <svg viewBox="0 0 85 134" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" className={className} style={{ width: size, height: 'auto' }}>
+    <svg viewBox="0 0 85 134" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" className={className}>
     <g filter="url(#filter0_d_2372_198)">
     <path d="M42 23.5L81 0V126L42 107.5V23.5Z" fill="url(#pattern0_2372_198)" shape-rendering="crispEdges"/>
     </g>

@@ -1,27 +1,36 @@
+/* Sticky translucent header with neon accents */
 .header {
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(0, 255, 136, 0.2);
-  padding: 20px 30px;
+  padding: 0 30px;
+  height: var(--header-height);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
   position: sticky;
   top: 0;
   z-index: 100;
 }
 
+/* Horizontal layout for profile and icons */
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1400px;
-  margin: 0 auto;
+  width: 100%;
+  gap: clamp(8px, 2vw, 24px);
 }
 
+/* Grouping for avatar and text */
 .user-profile {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: clamp(8px, 1.5vw, 16px);
+  min-width: 0; /* allow text to truncate */
 }
 
+/* Circular framed avatar */
 .profile-picture {
   width: 50px;
   height: 50px;
@@ -37,33 +46,44 @@
   object-fit: cover;
 }
 
+/* Username and rank stacked vertically */
 .user-info {
   display: flex;
   flex-direction: column;
   gap: 2px;
+  min-width: 0;
+  max-width: clamp(100px, 22vw, 260px);
 }
 
 .username {
-  font-size: 16px;
+  font-size: clamp(14px, 2.2vmin, 18px);
   font-weight: 600;
   color: #00ff88;
   text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .rank {
-  font-size: 14px;
+  font-size: clamp(12px, 1.8vmin, 14px);
   color: #cccccc;
   font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
+/* Right-side action icons */
 .utility-icons {
   display: flex;
-  gap: 15px;
+  gap: clamp(8px, 1.8vmin, 16px);
 }
 
+/* Round clickable icon holder */
 .icon-container {
-  width: 45px;
-  height: 45px;
+  width: clamp(30px, 3.8vmin, 45px);
+  height: clamp(30px, 3.8vmin, 45px);
   border-radius: 50%;
   background: rgba(0, 255, 136, 0.1);
   border: 1px solid rgba(0, 255, 136, 0.3);
@@ -81,13 +101,15 @@
   transform: translateY(-2px);
 }
 
+/* Placeholder icon style */
 .utility-icon {
-  width: 20px;
-  height: 20px;
+  width: clamp(12px, 1.8vmin, 20px);
+  height: clamp(12px, 1.8vmin, 20px);
   color: #00ff88;
   filter: drop-shadow(0 0 5px rgba(0, 255, 136, 0.5));
 }
 
+/* Decorative gradient divider under header */
 .header-divider {
   height: 1px;
   background: linear-gradient(90deg, transparent, #00ff88, transparent);
@@ -95,10 +117,11 @@
   opacity: 0.3;
 }
 
-/* Mobile Landscape Orientation */
+/* Responsive: Mobile landscape adjustments */
 @media (orientation: landscape) and (max-height: 600px) {
+  :root { --header-height: 60px; }
   .header {
-    padding: 8px 15px;
+    padding: 0 15px;
   }
   
   .profile-picture {
@@ -129,10 +152,11 @@
   }
 }
 
-/* Mobile Portrait */
+/* Responsive: Mobile portrait adjustments */
 @media (max-width: 768px) and (orientation: portrait) {
+  :root { --header-height: 64px; }
   .header {
-    padding: 15px 20px;
+    padding: 0 20px;
   }
   
   .user-profile {
@@ -168,8 +192,9 @@
 }
 
 @media (max-width: 480px) and (orientation: portrait) {
+  :root { --header-height: 56px; }
   .header {
-    padding: 10px 15px;
+    padding: 0 15px;
   }
   
   .user-info {

@@ -1,6 +1,8 @@
+// Right-side sidebar listing secondary actions with a pawn SVG
 import React from 'react'
 import './Sidebar.css'
 
+// Decorative pawn icon used for each sidebar item
 const PawnIcon = () => (
   <svg width="121" height="83" viewBox="0 0 121 83" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g filter="url(#filter0_d_2192_130)">
@@ -25,6 +27,7 @@ const PawnIcon = () => (
 )
 
 const Sidebar = () => {
+  // Sidebar menu configuration with optional badges
   const sidebarItems = [
     {
       id: 'messages',
@@ -48,6 +51,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="sidebar-content">
+        {/* Render each sidebar row with an icon and label */}
         {sidebarItems.map((item) => (
           <div key={item.id} className="sidebar-item">
             <div className="sidebar-pawn-container">

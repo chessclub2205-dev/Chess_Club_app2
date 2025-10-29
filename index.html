@@ -1,13 +1,21 @@
 <!DOCTYPE html>
+<!--
+  Base HTML document for the app. Vite will mount the React app
+  into the element with id="root" and load the entry module below.
+-->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- Favicon used by Vite dev server/build -->
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <!-- Ensures proper scaling on mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chess Club</title>
   </head>
   <body>
+    <!-- React will render into this container -->
     <div id="root"></div>
+    <!-- Entry point: loads the React app (ES module) -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
