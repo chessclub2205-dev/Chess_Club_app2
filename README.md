@@ -107,3 +107,10 @@ The app is fully responsive and adapts to different screen sizes:
 - Battle Pass system
 - Custom skins and themes
 - Real money gaming features
+
+## how to push
+- git init
+- git add -A
+- git commit -m "Initial commit"
+- git remote add origin git@github.com:yourusername/your-repo-name.git
+- git push -u origin main
