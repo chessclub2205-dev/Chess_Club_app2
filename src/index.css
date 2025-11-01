@@ -43,3 +43,20 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #00cc6a;
 }
+
+/* Overlay when device is in portrait (not landscape) on small screens */
+.orientation-overlay {
+  position: fixed;
+  z-index: 99999;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #111b;
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2.6vh;
+  text-align: center;
+  pointer-events: all;
+  backdrop-filter: blur(4px);
+}
+@media (orientation: landscape) {
+  .orientation-overlay { display: none !important; }
+}

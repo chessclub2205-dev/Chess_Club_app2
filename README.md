@@ -112,5 +112,5 @@ The app is fully responsive and adapts to different screen sizes:
 - git init
 - git add -A
 - git commit -m "Initial commit"
-- git remote add origin git@github.com:yourusername/your-repo-name.git
+- git remote add origin https://github.com/chessclub2205-dev/Chess_Club_app2.git
 - git push -u origin main
