@@ -57,6 +57,3 @@ body {
   pointer-events: all;
   backdrop-filter: blur(4px);
 }
-@media (orientation: landscape) {
-  .orientation-overlay { display: none !important; }
-}
