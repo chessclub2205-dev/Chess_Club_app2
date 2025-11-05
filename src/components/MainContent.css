@@ -68,7 +68,7 @@
 
 /* Default icon sizing and color (desktop-first) */
 .chess-icon {
-  width: clamp(28px, 8vmin, 72px);
+  width: clamp(28px, 8vmin, 100px);
   height: auto;
   color: #00ff88;
   transition: all 0.3s ease;
@@ -76,7 +76,7 @@
 
 /* Slightly larger icon for VS */
 .vs-icon {
-  width: clamp(36px, 12vmin, 108px);
+  width: clamp(100px, 12vmin, 308px);
   height: auto;
 }
 
